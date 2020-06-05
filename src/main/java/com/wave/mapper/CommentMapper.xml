@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wave.mapper.CommentMapper" >
+
+<select id="selectByPostid" resultType="Comment">
+    select * from comment where postid = #{postid}
+</select>
+<insert id="insertComment" keyProperty="id"  useGeneratedKeys="true" parameterType="Comment">
+       INSERT INTO `minpro`.`comment`(`userid`, `username`, `context`, `postid`, `date`) VALUES (#{userid}, #{username}, #{context}, #{postid}, #{date})
+    </insert>
+</mapper>
